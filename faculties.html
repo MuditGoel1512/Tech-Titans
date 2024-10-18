@@ -58,6 +58,9 @@
         <a href="#" class="chat-btn" aria-label="Chat with us">💬</a>
         
         <script>
+            if (localStorage.getItem("mentors") === undefined) {
+                    localStorage.setItem('mentors', JSON.stringify(mydata));
+                }
             let data=JSON.parse(localStorage.getItem("mentors"));
             async function fetchMentorData() {
                 try {
