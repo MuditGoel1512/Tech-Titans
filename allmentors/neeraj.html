@@ -272,5 +272,49 @@
             }, 200);
         });
     });
+    async function sendEmail(email,type) {
+    const url = 'https://send-chitkara.vercel.app/api/sendMentorMail'; // Replace with your actual endpoint
+
+    // Create the data object
+    const data = {
+       "person":type,
+    "mentorName":"Neeraj",
+    "mail":email,
+    "timeSlot":"12:00PM-2:00PM",
+    "special":"AI/ML"
+    };
+
+    try {
+        // Send a POST request
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        // Check if the response is OK
+        if (response.ok) {
+            const result = await response.json();
+            console.log('Email sent successfully:', result);
+            alert('Email sent successfully!');
+        } else {
+            const error = await response.json();
+            console.error('Error sending email:', error);
+            alert('Failed to send email: ' + error.message);
+        }
+    } catch (error) {
+        console.error('Network error:', error);
+        alert('Network error: ' + error.message);
+    }
+}
+    document.querySelector('.book-now-button').addEventListener('click',async ()=>{
+        console.log("Book Now Button Clicked");
+        await sendEmail("namanbansal102@gmail.com","mentor");// for mentor
+        await sendEmail("nakulg616@gmail.com","user");// for user
+
+        
+    })
 </script>
 </html>
