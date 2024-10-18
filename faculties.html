@@ -58,6 +58,13 @@
         <a href="#" class="chat-btn" aria-label="Chat with us">💬</a>
         
         <script>
+            let mydata = [];
+                for (let i = 0; i < 19; i++) {
+                    mydata[i] = {'mentorId': i + 1, available: true, timeSlot: "__"};
+                }
+                localStorage.setItem('mentors', JSON.stringify(mydata));
+                if (localStorage.getItem("mentors") == undefined) {
+                }
             if (localStorage.getItem("mentors") === undefined) {
                     localStorage.setItem('mentors', JSON.stringify(mydata));
                 }
