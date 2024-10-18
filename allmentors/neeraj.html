@@ -361,6 +361,7 @@
        "person":type,
     "mentorName":"Neeraj",
     "mail":email,
+    "userName":localStorage.getItem("userName"),
     "timeSlot":"12:00PM-2:00PM",
     "special":"AI/ML"
     };
@@ -393,7 +394,7 @@
     document.querySelector('.book-now-button').addEventListener('click',async ()=>{
         console.log("Book Now Button Clicked");
         await sendEmail("namanbansal102@gmail.com","mentor");// for mentor
-        await sendEmail("nakulg616@gmail.com","user");// for user
+        await sendEmail(localStorage.getItem("userEmail"),"user");// for user
 
         
     })
