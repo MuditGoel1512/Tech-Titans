@@ -401,3 +401,153 @@ body, html {
     filter: brightness(1.2) saturate(1.2); /* Slightly brighter and more saturated */
     border: 1px solid #007BFF; /* Change border color on hover */
 }
+
+
+
+
+.customer-profile {
+    width: 100%;
+    height: 40vh;
+    background-color: #fdf1e6; /* Background color similar to the image */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.customer-profile h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.customer-profile p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: hue-rotate(20deg); /* Adding a color filter effect */
+}
+
+.stat h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.stat p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Optional: Add subtle background lines effect similar to the image */
+.customer-profile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.3), transparent 70%);
+    transform: translateX(-50%);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+
+.explore-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #fdf1e6;
+}
+
+.explore-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.explore-section h2 span {
+    color: #ff6600; /* Highlight color */
+}
+
+.explore-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.see-all-blogs {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.blog-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    background-color: white;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 15px;
+}
+
+.blog-content h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.blog-content .date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.blog-content p {
+    font-size: 0.9rem;
+    color: #666;
+}
