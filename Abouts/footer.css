@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer {
+    background-color: #ffffff;
+    padding: 2rem;
+    color: #333;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 1rem;
+}
+.footer-logo {
+    max-width: 150px;
+    height: auto;
+}
+.footer-description {
+    font-size: 0.9rem;
+    color: #666;
+    max-width: 300px;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: #ff6600;
+}
+.call-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+.call-button:hover {
+    background-color: #e65c00;
+}
+.app-badges img {
+    max-width: 140px;
+    height: auto;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+.social-icons a {
+    color: #666;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    color: #ff6600;
+}
+.app-download {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.app-download input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+.app-download button {
+    padding: 0.5rem 1rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.app-download button:hover {
+    background-color: #e65c00;
+}
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+    .app-download {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .app-download form {
+        margin-top: 1rem;
+    }
+}
