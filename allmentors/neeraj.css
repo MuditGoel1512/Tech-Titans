@@ -81,6 +81,7 @@ body {
     font-size: 18px;
 }
 
+
 /* Navbar Actions */
 .navbar-actions {
     display: flex;
@@ -380,6 +381,11 @@ body {
 }
 .faq-item.active .faq-answer {
     display: block;
+}
+.disabled{
+    background-color: #fab181;
+    cursor:not-allowed;
+    
 }
 @media (max-width: 768px) {
     .profile-header, .main-content {

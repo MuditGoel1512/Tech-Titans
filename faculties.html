@@ -99,6 +99,15 @@
 
         // Call the function to render mentor list when the page loads
         window.onload = renderMentorList;
+        let mydata=[]
+        for (let i = 0; i < 19; i++) {
+           mydata[i]={'mentorId':i+1,available:true,timeSlot:"__"}
+        }
+        if(localStorage.getItem("mentors")==undefined){
+
+            localStorage.setItem('mentors',JSON.stringify(mydata))
+        }
+        
     </script>
 </body>
 
