@@ -37,29 +37,7 @@
         </div>
     </nav>
     <main>
-        <nav class="navbar">
-            <div class="navbar-container">
-                <a href="#" class="navbar-logo">
-                    <span class="logo-text">SLIET Mentorship</span>
-                </a>
-                <ul class="navbar-menu">
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
-                    <li><a href="#mentors"><i class="fas fa-user-friends"></i> Mentors</a></li>
-                    <li><a href="#book"><i class="fas fa-calendar-check"></i> Book</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-                <div class="navbar-actions">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search..." id="search-input">
-                    </div>
-                    <a href="#login" class="login-button">
-                        <i class="fas fa-user"></i>
-                        <span>Login</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
+        
         <main>
             <div class="container">
                 <h1 class="animate-bounce">Top Mentors at SLIET</h1>
@@ -70,16 +48,17 @@
                 <div class="search-container">
                     <input type="text" class="search-input" id="mentor-search" placeholder="Search mentors...">
                 </div>
-    
+                
                 <div class="mentor-grid" id="mentor-list">
                     <!-- Mentor cards will be dynamically inserted here -->
                 </div>
             </div>
         </main>
-    
+        
         <a href="#" class="chat-btn" aria-label="Chat with us">💬</a>
-
+        
         <script>
+            let data=JSON.parse(localStorage.getItem("mentors"));
             async function fetchMentorData() {
                 try {
                     const response = await fetch('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/facultyDetails-KYbSr1SDgyZ1hyhgKkKLS6tsAYoVsy.json');
@@ -90,8 +69,17 @@
                     return null;
                 }
             }
-    
-            function createMentorCard(mentor) {
+    function checkAvailable(id){
+            for(let i=0;i<19;i++){
+                if(data[i].mentorId==id && data[i].available==false){
+                    console.log("Condtion True");  
+                    return false;
+                }
+
+        }
+        return true;  
+    }
+            function createMentorCard(mentor,id) {
                 return `
                     <div class="mentor-card">
                         <center>
@@ -100,7 +88,8 @@
                             <div class="mentor-info">
                             <h2 class="mentor-name">${mentor.name}</h2>
                             <p class="mentor-qualification">${mentor.qualification}</p>
-                            <p>Experience: ${mentor.experience || 'Not specified'}</p>
+                            <p>Current Status: <span class="ava" style="color:green">${checkAvailable(id)?"Available":""}</span>
+                                <span class="ava" style="color:red">${checkAvailable(id)?"":"Unavailable"}</span></p>
                             <p>${mentor.phone || 'Contact information not available'}</p>
                             <a href="#" class="book-session-btn">Book Session</a>
                         </div>
@@ -113,9 +102,11 @@
                 const mentorData = await fetchMentorData();
     
                 if (mentorData) {
+                    let id=1;
                     for (const category in mentorData) {
                         mentorData[category].forEach(mentor => {
-                            mentorList.innerHTML += createMentorCard(mentor);
+                            mentorList.innerHTML += createMentorCard(mentor,id);
+                            id++;
                         });
                     }
                 } else {
