@@ -122,7 +122,7 @@ header {
 
 #lft-list{
     display: flex;
-    gap: 7vh;
+    gap: 4vh;
     flex-direction: column;
     /* border: 2px solid black; */
     justify-content: center;
@@ -131,13 +131,20 @@ header {
 }
 
 #lft-list li{
-    width: 58%;
+    width: 65%;
     font-size: larger;
     display: flex;
     gap: 20vw;
-    padding-left: 3vw;
+    /* padding-left: 3vw; */
+    justify-content: center;
+    align-items: center;
 }
 
+#lft-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 body {
