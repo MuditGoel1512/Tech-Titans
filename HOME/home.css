@@ -134,7 +134,7 @@ header {
     width: 65%;
     font-size: larger;
     display: flex;
-    gap: 20vw;
+    gap: 10vw;
     /* padding-left: 3vw; */
     justify-content: center;
     align-items: center;
