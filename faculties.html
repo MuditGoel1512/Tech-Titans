@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Gennie - Best General Surgeons In Jaipur</title>
+    <link rel="stylesheet" href="faculties.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://v0.dev/placeholder.svg" alt="Health Gennie Logo" class="logo">
+            <nav>
+                <a href="#">Book Appointment</a>
+                <a href="#">Health Care Plans</a>
+                <a href="#">Lab Test</a>
+                <a href="#">Login</a>
+                <a href="#">For Doctors</a>
+            </nav>
+        </div>
+    </header>
+    <div class="search-bar">
+        <div class="search-container">
+            <input type="text" placeholder="Jaipur" value="Jaipur">
+            <select>
+                <option>General Surgeon</option>
+            </select>
+            <button>Search</button>
+        </div>
+    </div>
+    <main>
+        <div class="sidebar">
+            <h2>Consult Type</h2>
+            <ul>
+                <li><input type="radio" name="consult-type" id="all" checked> <label for="all">All</label></li>
+                <li><input type="radio" name="consult-type" id="tele"> <label for="tele">Tele-Consultation</label></li>
+                <li><input type="radio" name="consult-type" id="in-clinic"> <label for="in-clinic">In-Clinic Consultation</label></li>
+            </ul>
+            <h2>Locality</h2>
+            <input type="text" placeholder="Find Locality">
+            <ul>
+                <li><input type="checkbox" id="all-places"> <label for="all-places">All Places</label></li>
+                <li><input type="checkbox" id="adarsh-nagar"> <label for="adarsh-nagar">Adarsh Nagar</label></li>
+                <li><input type="checkbox" id="bapu-nagar"> <label for="bapu-nagar">Bapu Nagar</label></li>
+                <li><input type="checkbox" id="c-scheme"> <label for="c-scheme">C-Scheme</label></li>
+                <li><input type="checkbox" id="jagatpura"> <label for="jagatpura">Jagatpura</label></li>
+                <li><input type="checkbox" id="jhotwara"> <label for="jhotwara">Jhotwara</label></li>
+                <li><input type="checkbox" id="lalkothi"> <label for="lalkothi">Lalkothi</label></li>
+                <li><input type="checkbox" id="malviya-nagar"> <label for="malviya-nagar">Malviya Nagar</label></li>
+                <li><input type="checkbox" id="mansarovar"> <label for="mansarovar">Mansarovar</label></li>
+            </ul>
+            <h2>Experience</h2>
+            <ul>
+                <li><input type="checkbox" id="1-5"> <label for="1-5">1-5 Years</label></li>
+                <li><input type="checkbox" id="5-10"> <label for="5-10">5-10 Years</label></li>
+                <li><input type="checkbox" id="10-15"> <label for="10-15">10-15 Years</label></li>
+                <li><input type="checkbox" id="15-20"> <label for="15-20">15-20 Years</label></li>
+                <li><input type="checkbox" id="20+"> <label for="20+">More than 20 Years</label></li>
+            </ul>
+            <h2>Consultation Fee</h2>
+            <input type="range" min="0" max="10000" value="5000" class="slider" id="fee-range">
+            <div class="fee-inputs">
+                <input type="number" id="min-fee" value="0" min="0" max="10000">
+                <input type="number" id="max-fee" value="10000" min="0" max="10000">
+            </div>
+            <h2>Top Doctors By Location</h2>
+            <div class="location-buttons">
+                <button class="location-button">Best Doctors in Raja Park</button>
+                <button class="location-button">Best Doctors in Mansarovar</button>
+                <button class="location-button">Best Doctors in Malviya Nagar</button>
+                <button class="location-button">Best Doctors in Lalkothi</button>
+                <button class="location-button">Best Doctors in Jhotwara</button>
+                <button class="location-button">Best Doctors in Jagatpura</button>
+                <button class="location-button">Best Doctors in C-Scheme</button>
+                <button class="location-button">Best Doctors in Bapu Nagar</button>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Best General Surgeons In Jaipur</h1>
+            <p>Select the right doctor from Health Gennie and get the best care you deserve.</p>
+            <div class="doctor-card">
+                <img src="https://v0.dev/placeholder.svg" alt="Dr. Navneet Kothari" class="doctor-image">
+                <div class="doctor-info">
+                    <h2>Dr. Navneet Kothari</h2>
+                    <p>General Surgeon</p>
+                    <p>MBBS, MS</p>
+                    <p>Experience: 38 Years</p>
+                    <p>267, Vidyut Nagar-A, Ajmer Road, Ajmer Road, Jaipur</p>
+                    <button class="appointment-btn">In-clinic Appointment</button>
+                    <span class="not-available">Not Available</span>
+                </div>
+            </div>
+            <!-- Add more doctor cards here -->
+        </div>
+        
+    </main>
+    <button class="whatsapp-btn">Message Us</button>
+</body>
+</html>

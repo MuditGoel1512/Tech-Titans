@@ -57,26 +57,37 @@ nav ul li a {
 
 main {
     flex-grow: 1;
-    padding: 20px;
+    border: 1px solid rgb(192, 192, 192);
+    /* padding: 20px; */
 }
 
 header {
+    padding: 0px 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    background-color: white;
 }
 
 .search-bar {
     display: flex;
+    position: relative;
 }
 
 .search-bar input {
-    padding: 10px;
+    padding: 14px 10px;
+    background-color: #dcdcdc;
+    width: 28vw;
+    font-size: 1rem;
     border: 1px solid #ddd;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
 }
-
+.search-icon{
+    position: absolute;
+    right: 10px;
+    top: 20%;
+}
 .search-bar button {
     padding: 10px;
     background-color: #6CB4EE;
@@ -141,3 +152,8 @@ body {
     font-weight: 400;
     font-style: normal;
   }
+
+.right-header button{
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+}
