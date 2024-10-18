@@ -13,29 +13,35 @@
 <body>
 
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="navbar-logo">
-                <span class="logo-text">SLIET Mentorship</span>
+        <div class="navbar-container">  
+          <a href="#" class="navbar-logo">
+            <span class="logo-text">SLIET Mentorship</span>
+          </a>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." id="search-input">
+          </div>
+          <ul class="navbar-menu">
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+            <li><a href="#mentors"><i class="fas fa-user-friends"></i> Mentors</a></li>
+            <li><a href="#book"><i class="fas fa-calendar-check"></i> Book</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+          </ul>
+          <div class="navbar-actions">
+        
+            <a href="#login" class="login-button" id="login-button">
+              <i class="fas fa-user"></i>
+              <span>Login</span>
             </a>
-            <ul class="navbar-menu">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
-                <li><a href="#mentors"><i class="fas fa-user-friends"></i> Mentors</a></li>
-                <li><a href="#book"><i class="fas fa-calendar-check"></i> Book</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-            <div class="navbar-actions">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search..." id="search-input">
+            <div class="user-profile" id="user-profile" style="display: none;">
+              <img src="" alt="User Profile" class="profile-image" id="navbar-profile-image">
+              <span class="user-name" id="navbar-user-name"></span>
+              <button type="submit" class="logoutbtn">Logout</button>
 
-                </div>
-                <a href="#login" class="login-button">
-                    <i class="fas fa-user"></i>
-                    <span>Login</span>
-                </a>
             </div>
+          </div>
         </div>
-    </nav>
+      </nav>
     <main>
         
         <main>
@@ -58,6 +64,13 @@
         <a href="#" class="chat-btn" aria-label="Chat with us">💬</a>
         
         <script>
+            let mydata = [];
+                for (let i = 0; i < 19; i++) {
+                    mydata[i] = {'mentorId': i + 1, available: true, timeSlot: "__"};
+                }
+                localStorage.setItem('mentors', JSON.stringify(mydata));
+                if (localStorage.getItem("mentors") == undefined) {
+                }
             if (localStorage.getItem("mentors") === undefined) {
                     localStorage.setItem('mentors', JSON.stringify(mydata));
                 }
@@ -94,7 +107,7 @@
                             <p>Current Status: <span class="ava" style="color:green">${checkAvailable(id)?"Available":""}</span>
                                 <span class="ava" style="color:red">${checkAvailable(id)?"":"Unavailable"}</span></p>
                             <p>${mentor.phone || 'Contact information not available'}</p>
-                            <a href="#" class="book-session-btn">Book Session</a>
+                            <a href="/allmentors/p_${id}.html" class="book-session-btn">Book Session</a>
                         </div>
                     </div>
                 `;
@@ -148,6 +161,7 @@
                 }
             };
         </script>
+        <script src="//code.tidio.co/s9wpkcpjgijf2c4rmc9lmiv5vurbj4j6.js" async></script>
 </body>
 
 </html>
