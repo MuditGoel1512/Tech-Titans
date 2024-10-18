@@ -4,7 +4,75 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5e6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+h1 span {
+    color: #ff8c00;
+}
+p {
+    text-align: center;
+    color: #666;
+}
+.carousel {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.specialist-card {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.specialist-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.specialist-card h3 {
+    margin: 10px;
+    color: #333;
+}
+.specialist-card p {
+    margin: 10px;
+    color: #666;
+    font-size: 14px;
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
+.nav-button.prev {
+    left: 10px;
+}
+.nav-button.next {
+    right: 10px;
+}
 .container {
     display: flex;
     min-height: 100vh;

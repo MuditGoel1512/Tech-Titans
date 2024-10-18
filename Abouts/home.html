@@ -44,5 +44,57 @@
             <img src="https://www.healthgennie.com/img/BookSessionNow.png" alt="Happy People" class="people-image">
         </div>
     </div>
+    <br>
+    <br>
+    <div class="container-2">
+
+        <h1>Top Specialists To Treat Your <span>Health Problems</span></h1>
+        <p>Schedule A Doctor's Appointment To Solve Your Problem.</p>
+        <div class="carousel">
+            <div class="carousel-container" id="specialistContainer"></div>
+            <button class="nav-button prev" onclick="navigate(-1)">&#10094;</button>
+            <button class="nav-button next" onclick="navigate(1)">&#10095;</button>
+        </div>
+    </center>
+   
 </body>
+<script>
+    const specialists = [
+        { name: 'ENT/Otorhinolaryngologist', description: 'Treat ear, nose and throat related problems.', image: 'https://www.healthgennie.com/public/speciality-images/Psychiatrist.jpg0' },
+        { name: 'General Surgeon', description: 'Treats physical deformities, repairs bone, and tissue after injuries.', image: 'https://www.healthgennie.com/public/speciality-images/Psychiatrist.jpg' },
+        { name: 'Pulmonologist', description: 'Treat respiratory diseases and disorders.', image: 'https://www.healthgennie.com/public/speciality-images/Psychiatrist.jpg' },
+        { name: 'Sexologist', description: 'Treat and diagnose human sexual life and relationships.', image: 'https://www.healthgennie.com/public/speciality-images/Psychiatrist.jpg' },
+        { name: 'Cardiologist', description: 'Diagnose and treat heart-related conditions.', image: 'https://www.healthgennie.com/public/speciality-images/Psychiatrist.jpg' },
+        { name: 'Dermatologist', description: 'Specialize in skin, hair, and nail health.', image: 'https://www.healthgennie.com/public/speciality-images/Psychiatrist.jpg' }
+    ];
+
+    const container = document.getElementById('specialistContainer');
+    let currentIndex = 0;
+
+    function createSpecialistCard(specialist) {
+        const card = document.createElement('div');
+        card.className = 'specialist-card';
+        card.innerHTML = `
+            <img src="${specialist.image}" alt="${specialist.name}">
+            <h3>${specialist.name}</h3>
+            <p>${specialist.description}</p>
+        `;
+        return card;
+    }
+
+    function loadSpecialists() {
+        container.innerHTML = '';
+        for (let i = 0; i < 4; i++) {
+            const index = (currentIndex + i) % specialists.length;
+            container.appendChild(createSpecialistCard(specialists[index]));
+        }
+    }
+
+    function navigate(direction) {
+        currentIndex = (currentIndex + direction + specialists.length) % specialists.length;
+        loadSpecialists();
+    }
+
+    loadSpecialists();
+</script>
 </html>
