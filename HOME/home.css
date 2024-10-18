@@ -30,7 +30,7 @@ body {
 }
 
 .view-profile {
-    background-color: #8e44ad;
+    background-color: #6CB4EE;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -79,7 +79,7 @@ header {
 
 .search-bar button {
     padding: 10px;
-    background-color: #8e44ad;
+    background-color: #6CB4EE;
     color: white;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -124,6 +124,14 @@ header {
     display: flex;
     gap: 5vh;
     flex-direction: column;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+#lft-list li{
+    width: 50%;
+    font-size: larger;
 }
 
 
