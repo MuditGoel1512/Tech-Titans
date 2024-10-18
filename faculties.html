@@ -37,79 +37,123 @@
         </div>
     </nav>
     <main>
-        <div class="container">
-            <h1 class="animate-bounce">Top Mentors at SLIET</h1>
-
-            <p class="subtitle">Connect with experienced mentors and accelerate your growth journey. Discover
-                personalized guidance tailored to your aspirations.</p>
-
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search mentors...">
-            </div>
-
-            <div class="mentor-grid" id="mentor-list">
-                <!-- Mentor cards will be dynamically inserted here -->
-            </div>
-        </div>
-    </main>
-
-    <a href="#" class="chat-btn" aria-label="Chat with us">💬</a>
-
-    <script>
-        async function fetchMentorData() {
-            try {
-                const response = await fetch('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/facultyDetails-KYbSr1SDgyZ1hyhgKkKLS6tsAYoVsy.json');
-                const data = await response.json();
-                return data.faculty;
-            } catch (error) {
-                console.error('Error fetching mentor data:', error);
-                return null;
-            }
-        }
-
-        function createMentorCard(mentor) {
-            
-            return `
-                <div class="mentor-card">
-                    <img src="${mentor.profile_photo}" alt="${mentor.name}" class="mentor-image">
-                    <div class="mentor-info">
-                        <h2 class="mentor-name">${mentor.name}</h2>
-                        <p class="mentor-qualification">${mentor.qualification}</p>
-                        <p>Experience: ${mentor.experience || 'Not specified'}</p>
-                        <p>${mentor.phone || 'Contact information not available'}</p>
-                        <a href="#" class="book-session-btn">Book Session</a>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="#" class="navbar-logo">
+                    <span class="logo-text">SLIET Mentorship</span>
+                </a>
+                <ul class="navbar-menu">
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    <li><a href="#mentors"><i class="fas fa-user-friends"></i> Mentors</a></li>
+                    <li><a href="#book"><i class="fas fa-calendar-check"></i> Book</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="navbar-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." id="search-input">
                     </div>
+                    <a href="#login" class="login-button">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </a>
                 </div>
-            `;
-        }
+            </div>
+        </nav>
+        <main>
+            <div class="container">
+                <h1 class="animate-bounce">Top Mentors at SLIET</h1>
+    
+                <p class="subtitle">Connect with experienced mentors and accelerate your growth journey. Discover
+                    personalized guidance tailored to your aspirations.</p>
+    
+                <div class="search-container">
+                    <input type="text" class="search-input" id="mentor-search" placeholder="Search mentors...">
+                </div>
+    
+                <div class="mentor-grid" id="mentor-list">
+                    <!-- Mentor cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </main>
+    
+        <a href="#" class="chat-btn" aria-label="Chat with us">💬</a>
 
-        async function renderMentorList() {
-            const mentorList = document.getElementById('mentor-list');
-            const mentorData = await fetchMentorData();
-
-            if (mentorData) {
-                for (const category in mentorData) {
-                    mentorData[category].forEach(mentor => {
-                        mentorList.innerHTML += createMentorCard(mentor);
-                    });
+        <script>
+            async function fetchMentorData() {
+                try {
+                    const response = await fetch('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/facultyDetails-KYbSr1SDgyZ1hyhgKkKLS6tsAYoVsy.json');
+                    const data = await response.json();
+                    return data.faculty;
+                } catch (error) {
+                    console.error('Error fetching mentor data:', error);
+                    return null;
                 }
-            } else {
-                mentorList.innerHTML = '<p class="text-center text-red-500">Failed to load mentor data. Please try again later.</p>';
             }
-        }
-
-        // Call the function to render mentor list when the page loads
-        window.onload = renderMentorList;
-        let mydata=[]
-        for (let i = 0; i < 19; i++) {
-           mydata[i]={'mentorId':i+1,available:true,timeSlot:"__"}
-        }
-        if(localStorage.getItem("mentors")==undefined){
-
-            localStorage.setItem('mentors',JSON.stringify(mydata))
-        }
-        
-    </script>
+    
+            function createMentorCard(mentor) {
+                return `
+                    <div class="mentor-card">
+                        <center>
+                            <img src="${mentor.profile_photo}" alt="${mentor.name}" class="mentor-image">
+                            </center>
+                            <div class="mentor-info">
+                            <h2 class="mentor-name">${mentor.name}</h2>
+                            <p class="mentor-qualification">${mentor.qualification}</p>
+                            <p>Experience: ${mentor.experience || 'Not specified'}</p>
+                            <p>${mentor.phone || 'Contact information not available'}</p>
+                            <a href="#" class="book-session-btn">Book Session</a>
+                        </div>
+                    </div>
+                `;
+            }
+    
+            async function renderMentorList() {
+                const mentorList = document.getElementById('mentor-list');
+                const mentorData = await fetchMentorData();
+    
+                if (mentorData) {
+                    for (const category in mentorData) {
+                        mentorData[category].forEach(mentor => {
+                            mentorList.innerHTML += createMentorCard(mentor);
+                        });
+                    }
+                } else {
+                    mentorList.innerHTML = '<p class="text-center text-red-500">Failed to load mentor data. Please try again later.</p>';
+                }
+            }
+    
+            function setupSearch() {
+                const searchInput = document.getElementById('mentor-search');
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const mentorCards = document.querySelectorAll('.mentor-card');
+    
+                    mentorCards.forEach(card => {
+                        const mentorName = card.querySelector('.mentor-name').textContent.toLowerCase();
+                        const mentorQualification = card.querySelector('.mentor-qualification').textContent.toLowerCase();
+                        if (mentorName.includes(searchTerm) || mentorQualification.includes(searchTerm)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+    
+            window.onload = async function() {
+                await renderMentorList();
+                setupSearch();
+    
+                let mydata = [];
+                for (let i = 0; i < 19; i++) {
+                    mydata[i] = {'mentorId': i + 1, available: true, timeSlot: "__"};
+                }
+                if (localStorage.getItem("mentors") === undefined) {
+                    localStorage.setItem('mentors', JSON.stringify(mydata));
+                }
+            };
+        </script>
 </body>
 
 </html>
