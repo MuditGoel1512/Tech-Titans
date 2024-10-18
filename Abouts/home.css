@@ -5,13 +5,48 @@ body, html {
     background-color: #FFF8F3;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 2rem;
+  }
+  
+  .user-profile .profile-image {
+    width: 62px;
+    height: 62px;
+    margin-left: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-profile .user-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.2rem;
+  }
 .content {
     max-width: 50%;
 }
@@ -49,6 +84,28 @@ p {
     font-size: 18px;
     display: inline-block;
 }
+.logoutbtn {
+    background-color: #FF6B35;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 30px;
+    border:none;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-block;
+}
+.logoutbtn:hover
+{
+    background-color: transparent;
+    border:2px solid  black;
+    color:black;
+    transition:0.4s;
+    
+}
+
 .image-container {
     position: relative;
     width: 50%;
@@ -574,7 +631,7 @@ body {
 /* Navbar Styling */
 .navbar {
     background-color: #ffffff;
-    padding: 15px 20px;
+    padding-top: 15px ;
     position: sticky;
     top: 0;
     width: 100%;
@@ -587,7 +644,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -609,6 +666,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-right: 2rem;
+
 }
 
 /* Navbar Menu */
@@ -662,6 +721,7 @@ body {
     border: 2px solid #ff6600;
     border-radius: 25px;
     overflow: hidden;
+    margin-right: 1rem;
     transition: all 0.3s ease-in-out;
 }
 
