@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIET Mentorship Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1 class="title">SLIET MENTORSHIP</h1>
+            <div class="login-container">
+            
+                <div class="image-upload">
+                    <input type="file" id="file-input" accept="image/*">
+                    <label for="file-input" class="upload-label">
+                        <img id="profile-image" src="../assets/defaultprofile.jpg" alt="Profile Image">
+                        <div class="pen">
+                            <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M7 19H5a1 1 0 0 1-1-1v-1a3 3 0 0 1 3-3h1m4-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm7.441 1.559a1.907 1.907 0 0 1 0 2.698l-6.069 6.069L10 19l.674-3.372 6.07-6.07a1.907 1.907 0 0 1 2.697 0Z"/>
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+                
+           
+               
+                  
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <button type="submit" class="login-btn">Login</button>
+            </div>
+        </div>
+        <div style="background-image: url(../assets/teacher.jpg);" class="right-side" id="lottie-animation">
+          
+        </div>
+    </div>
+    <script src="login.js"></script>
+
+    
+</body>
+</html>
