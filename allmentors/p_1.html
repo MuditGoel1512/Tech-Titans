@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="/Abouts/footer.css">
+    <link rel="stylesheet" href="./footer.css">
     <title>Faculty Profile - SLIET Mentorship</title>
     <style>
         .time-slots {
@@ -57,7 +57,7 @@
     <div class="container">
         <header class="profile-header">
             <div class="profile-info">
-                <img src="http://sliet.ac.in/wp-content/uploads/avatars/5/6fc17d6735998f4f22a0e91fbf43b75c-bpfull.jpg" alt="Dr. Birmohan Singh" class="profile-image">
+                <img src="../images/1.jpg" alt="Dr. Birmohan Singh" class="profile-image">
                 <div>
                     <div class="doctor-specialty">Computer Science and Engineering</div>
                     <h1 class="doctor-name">Dr. Birmohan Singh</h1>
@@ -296,39 +296,43 @@
     });
 
     async function sendEmail(email, type) {
-        const url = 'https://send-chitkara.vercel.app/api/sendMentorMail';
 
-        const data = {
-            "person": type,
-            "mentorName": "Birmohan Singh",
-            "mail": email,
-            "timeSlot": selectedTimeSlot ? selectedTimeSlot.dataset.time : "",
-            "special": "Computer Science and Engineering"
-        };
+    // Use CORS Anywhere for development purposes
+    const url = 'https://cors-anywhere.herokuapp.com/https://send-chitkara.vercel.app/api/sendMentorMail';
 
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+    const data = {
+        "person": type,
+        "mentorName": "Birmohan Singh",
+        "mail": email,
+        "timeSlot": selectedTimeSlot ? selectedTimeSlot.dataset.time : "",
+        "special": "Computer Science and Engineering"
+    };
 
-            if (response.ok) {
-                const result = await response.json();
-                console.log('Email sent successfully:', result);
-                alert('Email sent successfully!');
-            } else {
-                const error = await response.json();
-                console.error('Error sending email:', error);
-                alert('Failed to send email: ' + error.message);
-            }
-        } catch (error) {
-            console.error('Network error:', error);
-            alert('Network error: ' + error.message);
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log('Email sent successfully:', result);
+            alert('Email sent successfully!');
+        } else {
+            const error = await response.json();
+            console.error('Error sending email:', error);
+            alert('Failed to send email: ' + error.message);
         }
+    } catch (error) {
+        console.error('Network error:', error);
+        alert('Network error: ' + error.message);
     }
+}
+
 
     bookNowButton.addEventListener('click', async () => {
         if (selectedTimeSlot) {
