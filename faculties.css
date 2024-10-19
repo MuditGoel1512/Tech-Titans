@@ -400,3 +400,9 @@ h1 {
 .animate-bounce {
     animation: bounce 2s infinite;
 }
+
+
+
+.logo-text img{
+    width: 10vw;
+}
