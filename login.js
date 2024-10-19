@@ -43,7 +43,7 @@
         localStorage.setItem('userEmail', email);
         localStorage.setItem('isLoggedIn', 'true');
         console.log("User information saved.");
-        window.location.href = './Abouts/index.html';
+        window.location.href = './index.html';
     });
 
     function updateNavbar() {
