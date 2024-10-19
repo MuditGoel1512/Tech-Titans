@@ -340,6 +340,22 @@
             console.log("Book Now Button Clicked");
             await sendEmail("birmohan@sliet.ac.in", "mentor");
             await sendEmail("student@sliet.ac.in", "user");
+            if(localStorage.getItem('mentors')!=undefined){
+
+let data=JSON.parse(localStorage.getItem("mentors"));
+let myid=1;
+for(let i=0;i<19;i++){
+    if(data[i].mentorId==myid){
+        console.log("Condition True");
+        
+        data[i].available=false;
+        data[i].timeSlot=getCurrentDateTime()
+    }
+    
+}  
+localStorage.setItem("mentors",JSON.stringify(data));  
+}
+window.location.href='/faculties.html'
         }
     });
 
@@ -348,8 +364,27 @@
             window.location.href = "login.html";
         } 
     }
-
+    function getCurrentDateTime() {
+        const now = new Date();
+    
+        // Format options
+        const options = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false, // Use 24-hour format; set to true for 12-hour format
+        };
+    
+        // Format the date and time
+        const formattedDateTime = now.toLocaleString('en-US', options);
+        
+        return formattedDateTime;
+    }
     </script>
     <script src="//code.tidio.co/s9wpkcpjgijf2c4rmc9lmiv5vurbj4j6.js" async></script>
+    
 </body>
 </html>
