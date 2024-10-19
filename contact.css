@@ -318,3 +318,7 @@ button:hover {
     height: 50vh;
     overflow: hidden;
 }
+
+.logo-text img{
+    width: 10vw;
+}

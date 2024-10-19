@@ -16,7 +16,17 @@ body {
     z-index: 100;
     font-family: 'Poppins', sans-serif;
 }
-
+.login-warning {
+    background-color: #fbbf24;
+    color: red;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 .navbar-container {
     display: flex;
     justify-content: space-between;
