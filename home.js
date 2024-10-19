@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loginButton.addEventListener('click', function(event) {
         event.preventDefault();
         if (localStorage.getItem('isLoggedIn') !== 'true') {
-            window.location.href = 'login.html';
+            window.location.href = './login.html';
         }
     });
 
@@ -42,22 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('userName');
         localStorage.removeItem('userEmail');
         updateNavbar();
-        window.location.href = '../login.html';
+        window.location.href = './login.html';
     });
-
     // Prevent access to login page when logged in
     if (window.location.href.includes('login.html') && localStorage.getItem('isLoggedIn') === 'true') {
-        window.location.href = 'index.html';
+        window.location.href = './index.html';
     }
 
     // Prevent navigating back to the login page
     window.addEventListener('popstate', function(event) {
-        if (localStorage.getItem('isLoggedIn') === 'true' && document.referrer.includes('login.html')) {
-            window.location.href = 'index.html'; 
+        if (localStorage.getItem('isLoggedIn') === 'true' && document.referrer.includes('./login.html')) {
+            window.location.href = './index.html'; 
         }
     });
 
     if (localStorage.getItem('isLoggedIn') === 'true') {    
-        history.replaceState(null, '', 'index.html');
+        history.replaceState(null, '', './index.html');
     }
 });
