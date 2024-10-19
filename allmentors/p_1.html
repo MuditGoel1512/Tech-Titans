@@ -296,39 +296,41 @@
     });
 
     async function sendEmail(email, type) {
-        const url = 'https://send-chitkara.vercel.app/api/sendMentorMail';
+    // Use CORS Anywhere for development purposes
+    const url = 'https://cors-anywhere.herokuapp.com/https://send-chitkara.vercel.app/api/sendMentorMail';
 
-        const data = {
-            "person": type,
-            "mentorName": "Birmohan Singh",
-            "mail": email,
-            "timeSlot": selectedTimeSlot ? selectedTimeSlot.dataset.time : "",
-            "special": "Computer Science and Engineering"
-        };
+    const data = {
+        "person": type,
+        "mentorName": "Birmohan Singh",
+        "mail": email,
+        "timeSlot": selectedTimeSlot ? selectedTimeSlot.dataset.time : "",
+        "special": "Computer Science and Engineering"
+    };
 
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
 
-            if (response.ok) {
-                const result = await response.json();
-                console.log('Email sent successfully:', result);
-                alert('Email sent successfully!');
-            } else {
-                const error = await response.json();
-                console.error('Error sending email:', error);
-                alert('Failed to send email: ' + error.message);
-            }
-        } catch (error) {
-            console.error('Network error:', error);
-            alert('Network error: ' + error.message);
+        if (response.ok) {
+            const result = await response.json();
+            console.log('Email sent successfully:', result);
+            alert('Email sent successfully!');
+        } else {
+            const error = await response.json();
+            console.error('Error sending email:', error);
+            alert('Failed to send email: ' + error.message);
         }
+    } catch (error) {
+        console.error('Network error:', error);
+        alert('Network error: ' + error.message);
     }
+}
+
 
     bookNowButton.addEventListener('click', async () => {
         if (selectedTimeSlot) {
