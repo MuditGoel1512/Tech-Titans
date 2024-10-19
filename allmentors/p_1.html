@@ -297,7 +297,6 @@
 
     async function sendEmail(email, type) {
         const url = 'https://send-chitkara.vercel.app/api/sendMentorMail';
-
         const data = {
             "person": type,
             "mentorName": "Birmohan Singh",
@@ -305,7 +304,6 @@
             "timeSlot": selectedTimeSlot ? selectedTimeSlot.dataset.time : "",
             "special": "Computer Science and Engineering"
         };
-
         try {
             const response = await fetch(url, {
                 method: 'POST',
