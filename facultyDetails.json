@@ -7,7 +7,7 @@
           "qualification": "Ph.D., M.E.",
           "phone": "+91-1672-253208",
           "email": ["birmohansingh@sliet.ac.in", "birmohans@gmail.com"],
-          "profile_photo": "http://sliet.ac.in/wp-content/uploads/avatars/5/6fc17d6735998f4f22a0e91fbf43b75c-bpfull.jpg"
+          "profile_photo": "./images/birmohan.jpg"
         },
         {
           "id":2,
@@ -15,7 +15,7 @@
           "qualification": "Ph.D., M.Tech, B.Tech.",
           "phone": "+91-1672-253210",
           "email": ["damanpreets@sliet.ac.in"],
-          "profile_photo": "http://sliet.ac.in/wp-content/uploads/avatars/4/65783e7db0473-bpfull.jpg"
+          "profile_photo": "./images/amarnath.jpg"
         },
         {
           "id":3,
