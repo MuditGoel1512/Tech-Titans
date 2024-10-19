@@ -133,7 +133,7 @@
                         <div class="time-slot" data-time="2:00 PM">2:00 PM</div>
                         <div class="time-slot" data-time="4:00 PM">4:00 PM</div>
                     </div>
-                    <button class="book-now-button" disabled>Select a Time Slot</button>
+                    <button class="book-now-button" onclick="checkLogin()" disabled>Select a Time Slot</button>
                 </div>
                 <div class="card">
                     <div class="card-title">
@@ -189,6 +189,7 @@
                         <img src="https://views.medibuddy.in/doctor-profile/up-arrow.webp" alt="Toggle" width="24" height="24">
                     </button>
                 </div>
+
                 <div class="faq-answer">
                     <p>Dr. Singh offers research opportunities in areas such as Big Data Analytics, IoT, and Cloud Computing. Interested students can discuss potential projects during his office hours or via email.</p>
                 </div>
@@ -337,6 +338,13 @@
             await sendEmail("student@sliet.ac.in", "user");
         }
     });
+
+    function checkLogin() {
+        if (localStorage.isLoggedIn == 'false') {
+            window.location.href = "login.html";
+        } 
+    }
+
     </script>
     <script src="//code.tidio.co/s9wpkcpjgijf2c4rmc9lmiv5vurbj4j6.js" async></script>
 </body>
