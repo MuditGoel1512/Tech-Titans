@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('userName');
         localStorage.removeItem('userEmail');
         updateNavbar();
-        window.location.href = './login.html';
+        window.location.href = 'login.html';
     });
 
     // Prevent access to login page when logged in
